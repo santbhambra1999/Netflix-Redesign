@@ -42,10 +42,7 @@ function Login() {
         objectFit="cover"
         alt = ""
       />
-      <div className="absolute left-2 top-1 h-20 w-44 cursor-pointer md:left-8 md:top-4">
-        <Image src="https://rb.gy/ek4j9f" layout="fill" objectFit="contain" alt = "" />
-      </div>
-
+    
       <form
         className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
         onSubmit={handleSubmit(onSubmit)}
