@@ -12,7 +12,7 @@ function Table({ products, selectedPlan }: Props) {
       <tbody className="divide-y divide-[gray]">
         <tr className="tableRow">
           <td className="tableDataTitle">Monthly price</td>
-          {products.map((product) => (
+          {products?.map((product) => (
             <td
               className={`tableDataFeature ${
                 selectedPlan?.id === product.id
@@ -27,7 +27,7 @@ function Table({ products, selectedPlan }: Props) {
         </tr>
         <tr className="tableRow">
           <td className="tableDataTitle">Video quality</td>
-          {products.map((product) => (
+          {products?.map((product) => (
             <td
               className={`tableDataFeature ${
                 selectedPlan?.id === product.id
@@ -42,7 +42,7 @@ function Table({ products, selectedPlan }: Props) {
         </tr>
         <tr className="tableRow">
           <td className="tableDataTitle">Resolution</td>
-          {products.map((product) => (
+          {products?.map((product) => (
             <td
               className={`tableDataFeature ${
                 selectedPlan?.id === product.id
@@ -59,7 +59,7 @@ function Table({ products, selectedPlan }: Props) {
           <td className="tableDataTitle">
             Watch on your TV, computer, mobile phone and tablet
           </td>
-          {products.map((product) => (
+          {products?.map((product) => (
             <td
               className={`tableDataFeature ${
                 selectedPlan?.id === product.id
