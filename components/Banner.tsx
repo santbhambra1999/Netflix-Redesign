@@ -1,4 +1,3 @@
-import React from "react";
 import { Movie } from "../typings";
 import { useState, useEffect } from "react";
 import Image from "next/image";
