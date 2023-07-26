@@ -17,11 +17,9 @@ function Banner({ netflixOriginals }: Props) {
   const [showModal, setShowModal] = useRecoilState(modalState);
 
   useEffect(() => {
-    {
-      setMovie(
-        netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)]
-      );
-    }
+    setMovie(
+      netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)]
+    );
   }, [netflixOriginals]);
 
   return (
