@@ -1,10 +1,10 @@
 import { Movie } from "../typings";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { baseUrl } from '../constants/movie'
-import {FaPlay} from 'react-icons/fa'
+import { baseUrl } from "../constants/movie";
+import { FaPlay } from "react-icons/fa";
 import { InformationCircleIcon } from "@heroicons/react/20/solid";
-import {useRecoilState} from 'recoil'
+import { useRecoilState } from "recoil";
 import { modalState, movieState } from "../atoms/modalAtoms";
 
 interface Props {
@@ -13,11 +13,11 @@ interface Props {
 
 function Banner({ netflixOriginals }: Props) {
   const [movie, setMovie] = useState<Movie | null>(null);
-  const [currentMovie, setCurrentMovie] = useRecoilState(movieState)
-  const [showModal, setShowModal] = useRecoilState(modalState)
+  const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
+  const [showModal, setShowModal] = useRecoilState(modalState);
 
   useEffect(() => {
-    if (netflixOriginals && netflixOriginals.length > 0) {
+    {
       setMovie(
         netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)]
       );
@@ -27,12 +27,12 @@ function Banner({ netflixOriginals }: Props) {
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
       <div className="absolute top-0 left-0 -z-10 h-[95vh] w-screen">
-      <Image 
-      src = {`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
-      layout="fill"
-      objectFit="cover"
-      alt = ""
-      />
+        <Image
+          src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
+          layout="fill"
+          objectFit="cover"
+          alt=""
+        />
       </div>
       <h1 className="text-2xl font-bold md:text-4xl lg:text-7xl">
         {movie?.title || movie?.name || movie?.original_name}
@@ -49,8 +49,8 @@ function Banner({ netflixOriginals }: Props) {
         <button
           className="bannerButton bg-[gray]/70"
           onClick={() => {
-            setCurrentMovie(movie)
-            setShowModal(true)
+            setCurrentMovie(movie);
+            setShowModal(true);
           }}
         >
           <InformationCircleIcon className="h-5 w-5 md:h-8 md:w-8" /> More Info
